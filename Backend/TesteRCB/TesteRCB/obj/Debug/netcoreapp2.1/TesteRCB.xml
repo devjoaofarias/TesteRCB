@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TesteRCB</name>
+    </assembly>
+    <members>
+        <member name="M:TesteRCB.Controllers.ImovelController.Get">
+            <summary>
+            Listar todos imóveis
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TesteRCB.Controllers.ImovelController.GetById(System.Int32)">
+            <summary>
+            Listar um imóvel específico(id)
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TesteRCB.Controllers.ImovelController.Post(TesteRCB.Domains.Imovel)">
+            <summary>
+            Cadastrar um imóvel
+            </summary>
+            <param name="novoImovel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TesteRCB.Controllers.ImovelController.Delete(System.Int32)">
+            <summary>
+            Deletar um imóvel(id)
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TesteRCB.Controllers.ImovelController.Atualizar(System.Int32,TesteRCB.Domains.Imovel)">
+            <summary>
+            Alterar um imóvel(id)
+            </summary>
+            <param name="id"></param>
+            <param name="imovel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TesteRCB.Controllers.VeiculoController.Get">
+            <summary>
+            Listar todos os veículos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TesteRCB.Controllers.VeiculoController.GetById(System.Int32)">
+            <summary>
+            Listar um veículo específico(id)
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TesteRCB.Controllers.VeiculoController.Post(TesteRCB.Domains.Veiculo)">
+            <summary>
+            Cadastrar um veículo
+            </summary>
+            <param name="novoVeiculo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TesteRCB.Controllers.VeiculoController.Delete(System.Int32)">
+            <summary>
+            Deletar um veículo(id)
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TesteRCB.Controllers.VeiculoController.Atualizar(System.Int32,TesteRCB.Domains.Veiculo)">
+            <summary>
+            Alterar um veículo(id)
+            </summary>
+            <param name="id"></param>
+            <param name="veiculo"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

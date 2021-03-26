@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../Css/styleImovel.css" rel="stylesheet" />
+    <script src="../Javascript/scriptImovel.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <title>Imóvel</title>
+  </head>
+  <body>
+    <h1>Cadastro de imóvel</h1>
+    <div class="centro">
+      <div class="cadastro-page">
+        <div class="form">
+          <form class="cadastro-form" name="form" onsubmit="enviar()">
+            <input
+              type="text"
+              name="tituloCasa"
+              placeholder="Título da casa"
+              autofocus
+            />
+            <div class="CepEstado">
+              <input
+                id="inputCep"
+                type="text"
+                name="cep"
+                placeholder="Cep"
+                maxlength="8"
+              />
+              <input
+                id="inputEstado"
+                type="text"
+                name="estado"
+                placeholder="Estado"
+              />
+            </div>
+            <div class="CidadeNumero">
+              <input
+                id="inputCidade"
+                type="text"
+                name="cidade"
+                placeholder="Cidade"
+              />
+              <input
+                id="inputNumero"
+                type="text"
+                name="numero"
+                placeholder="Número"
+              />
+            </div>
+            <input
+              id="inputEndereco"
+              type="text"
+              name="endereco"
+              placeholder="Endereço"
+            />
+            <div class="ValorArea">
+              <input
+                type="text"
+                name="valorCasa"
+                id="valorCasa"
+                placeholder="Valor da casa"
+              />
+              <input
+                type="text"
+                name="areaCasa"
+                id="areaCasa"
+                placeholder="Área em m²"
+              />
+            </div>
+            <div class="NomeTelefone">
+              <input
+                type="text"
+                name="nomeProprietario"
+                id="nomeProp"
+                placeholder="Nome do proprietário"
+              />
+              <input
+                type="text"
+                name="telefoneProprietario"
+                id="telProp"
+                placeholder="Telefone do proprietário"
+              />
+            </div>
+            <div class="Selects">
+              <label for="quartos">Quartos:</label>
+              <select id="QntQuartos" name="quartos">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="5">6</option>
+                <option value="5">7</option>
+                <option value="5">8</option>
+              </select>
+              <label for="banheiros">Banheiros:</label>
+              <select id="QntBanheiros" name="banheiros">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="5">6</option>
+                <option value="5">7</option>
+                <option value="5">8</option>
+              </select>
+              <label for="tipoResidencia">Tipo de residencia</label>
+              <select id="tipoResidencia" name="tipoResidencia">
+                <option value="Casa">Casa</option>
+                <option value="Sobrado">Sobrado</option>
+                <option value="Apartamento">Apartamento</option>
+                <option value="Chale">Chalé</option>
+                <option value="Sitio">Sítio</option>
+                <option value="Hostel">Hostel</option>
+              </select>
+            </div>
+            <input type="submit" value="Cadastrar Imóvel" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    $(document).ready(function () {
+      function limpa_formulário_cep() {
+        // Limpa valores do formulário de cep.
+        $("#inputEstado").val("");
+        $("#inputCidade").val("");
+        $("#inputEndereco").val("");
+      }
+
+      //Quando o campo cep perde o foco.
+      $("#inputCep").blur(function () {
+        //Nova variável "cep" somente com dígitos.
+        var cep = $(this).val().replace(/\D/g, "");
+
+        //Verifica se campo cep possui valor informado.
+        if (cep != "") {
+          //Expressão regular para validar o CEP.
+          var validacep = /^[0-9]{8}$/;
+
+          //Valida o formato do CEP.
+          if (validacep.test(cep)) {
+            //Preenche os campos com "..." enquanto consulta webservice.
+            $("#inputEndereco").val("...");
+            $("#inputEstado").val("...");
+            $("#inputCidade").val("...");
+
+            //Consulta o webservice viacep.com.br/
+            $.getJSON(
+              "https://viacep.com.br/ws/" + cep + "/json/?callback=?",
+              function (dados) {
+                if (!("erro" in dados)) {
+                  //Atualiza os campos com os valores da consulta.
+                  $("#inputEndereco").val(dados.logradouro);
+                  $("#inputCidade").val(dados.localidade);
+                  $("#inputEstado").val(dados.uf);
+                } //end if.
+                else {
+                  //CEP pesquisado não foi encontrado.
+                  limpa_formulário_cep();
+                  alert("CEP não encontrado.");
+                }
+              }
+            );
+          } //end if.
+          else {
+            //cep é inválido.
+            limpa_formulário_cep();
+            alert("Formato de CEP inválido.");
+          }
+        } //end if.
+        else {
+          //cep sem valor, limpa formulário.
+          limpa_formulário_cep();
+        }
+      });
+    });
+  </script>
+</html>

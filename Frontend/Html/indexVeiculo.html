@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../Css/styleVeiculo.css" rel="stylesheet" />
+    <title>Veículo</title>
+  </head>
+  <body>
+    <h1>Cadastro de veículo</h1>
+    <div class="centro">
+      <div class="cadastro-page">
+        <div class="form">
+          <form class="cadastro-form" name="form" onsubmit="enviar()">
+            <div class="NomeTelefone">
+              <input
+                type="text"
+                name="nomeProprietario"
+                id="nomeProp"
+                placeholder="Nome do proprietário"
+                autofocus
+              />
+              <input
+                type="text"
+                name="telefoneProprietario"
+                id="telProp"
+                placeholder="Telefone do proprietário"
+              />
+            </div>
+            <div class="MarcaModelo">
+              <input
+                id="inputMarca"
+                name="marca"
+                type="text"
+                placeholder="Marca do veículo"
+              />
+              <input
+                id="inputModelo"
+                name="modelo"
+                type="text"
+                placeholder="Modelo do veículo"
+              />
+            </div>
+            <div class="AnoCor">
+              <input
+                id="inputAno"
+                name="anoVeiculo"
+                type="text"
+                placeholder="Ano do veículo"
+                maxlength="4"
+              />
+              <input
+                id="inputCor"
+                name="corVeiculo"
+                type="text"
+                placeholder="Cor do veículo"
+              />
+            </div>
+            <div class="KmValor">
+              <input
+                type="text"
+                name="kilometragem"
+                id="Kilometragem"
+                placeholder="Kilometragem"
+              />
+              <input
+                type="text"
+                name="valorCarro"
+                id="Valor"
+                placeholder="Valor em reais"
+              />
+            </div>
+            <div class="checks">
+              <div class="checkCol1">
+                <div class="checkbox">
+                  <label for="bancosCouro">Bancos em couro</label>
+                  <input
+                    type="checkbox"
+                    id="bancoCouro"
+                    name="bancoCouro"
+                    value="bancoCouro"
+                  />
+                </div>
+                <div class="checkbox">
+                  <label for="vidrosEletricos">Vidros elétricos</label>
+                  <input
+                    type="checkbox"
+                    id="vidroEletrico"
+                    name="vidroEletrico"
+                    value="vidroEletrico"
+                  />
+                </div>
+                <div class="checkbox">
+                  <label for="arCondicionado">Ar condicionado</label>
+                  <input
+                    type="checkbox"
+                    id="arCondicionado"
+                    name="arCondicionado"
+                    value="arCondicionado"
+                  />
+                </div>
+                <div class="checkbox">
+                  <label for="tetoSolar">Teto solar</label>
+                  <input
+                    type="checkbox"
+                    id="tetoSolar"
+                    name="tetoSolar"
+                    value="tetoSolar"
+                  />
+                </div>
+                <div class="checkbox">
+                  <label for="chavePresencial">Chave presencial</label>
+                  <input
+                    type="checkbox"
+                    id="chavePresencial"
+                    name="chavePresencial"
+                    value="chavePresencial"
+                  />
+                </div>
+                <div class="checkbox">
+                  <label for="navegadorGps">Navegador GPS</label>
+                  <input
+                    type="checkbox"
+                    id="navegadorGps"
+                    name="navegadorGps"
+                    value="navegadorGps"
+                  />
+                </div>
+                <div class="checkbox">
+                  <label for="computadorDeBordo">Computador de bordo</label>
+                  <input
+                    type="checkbox"
+                    id="computadorDeBordo"
+                    name="computadorDeBordo"
+                    value="computadorDeBordo"
+                  />
+                </div>
+              </div>
+              <div class="checkCol3">
+                <div class="checkbox">
+                  <label for="retrovisorFotocromico"
+                    >Retrovisor fotocromico</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="retrovisorFotocromico"
+                    name="retrovisorFotocromico"
+                    value="retrovisorFotocromico"
+                  />
+                </div>
+                <div class="checkbox">
+                  <label for="cambioAutomatico">Cambio automático</label>
+                  <input
+                    type="checkbox"
+                    id="cambioAutomatico"
+                    name="cambioAutomatico"
+                    value="cambioAutomatico"
+                  />
+                </div>
+                <div class="checkbox">
+                  <label for="volanteMultifuncional"
+                    >Volante multifuncional</label
+                  >
+                  <input
+                    type="checkbox"
+                    id="volanteMultifuncional"
+                    name="volanteMultifuncional"
+                    value="volanteMultifuncional"
+                  />
+                </div>
+                <div class="checkbox">
+                  <label for="conexaoBluetooth">Conexão bluetooth</label>
+                  <input
+                    type="checkbox"
+                    id="conexaoBluetooth"
+                    name="conexaoBluetooth"
+                    value="conexaoBluetooth"
+                  />
+                </div>
+                <div class="checkbox">
+                  <label for="airbags">Airbags</label>
+                  <input
+                    type="checkbox"
+                    id="airbags"
+                    name="airbags"
+                    value="airbags"
+                  />
+                </div>
+                <div class="checkbox">
+                  <label for="controleEsp">Controle ESP</label>
+                  <input
+                    type="checkbox"
+                    id="controleEsp"
+                    name="controleEsp"
+                    value="controleEsp"
+                  />
+                </div>
+                <div class="checkbox">
+                  <label for="luzDeNeblina">Luz de neblina</label>
+                  <input
+                    type="checkbox"
+                    id="luzDeNeblina"
+                    name="luzDeNeblina"
+                    value="luzDeNeblina"
+                  />
+                </div>
+              </div>
+            </div>
+            <input type="submit" value="Cadastrar veículo" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../Javascript/scriptVeiculo.js"></script>
+</html>

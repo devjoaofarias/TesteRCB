@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "16c89df4-82b4-4778-a085-d51151a17383",
+		"name": "TesteRCB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Listar veículos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Veiculo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Veiculo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar um veículo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"NomeProprietario\" : \"Joao Santos\",\r\n    \"TelefoneProprietario\" : \"11955577314\",\r\n    \"Marca\" : \"Toyota\",\r\n    \"Modelo\" : \"Hilux\",\r\n    \"AnoVeiculo\" : \"2020\",\r\n    \"CorVeiculo\" : \"Preto\",\r\n    \"Kilometragem\" : \"25000\",\r\n    \"ValorCarro\" : \"150000\",\r\n    \"BancoCouro\" : \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Veiculo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Veiculo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar um veículo (id)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Veiculo/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Veiculo",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar um veículo (id)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nomeProprietario\": \"Joao alves\",\r\n        \"telefoneProprietario\": \"11955577314\",\r\n        \"marca\": \"Toyota\",\r\n        \"modelo\": \"Corolla\",\r\n        \"anoVeiculo\": \"2010\",\r\n        \"corVeiculo\": \"roxo\",\r\n        \"kilometragem\": \"25000\",\r\n        \"valorCarro\": 0.0,\r\n        \"bancoCouro\": true\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Veiculo/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Veiculo",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar imóveis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Imovel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Imovel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar um imóvel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"TituloCasa\" : \"Condominio arua\",\r\n    \"Cep\" : \"03679030\",\r\n    \"Estado\" : \"SP\",\r\n    \"Cidade\" : \"Mogi\",\r\n    \"Numero\" : \"254\",\r\n    \"Endereco\" : \"Rua joao santos\",\r\n    \"ValorCasa\" : \"2500000\",\r\n    \"Area\" : \"1500\",\r\n    \"NomeProprietario\" : \"Jonnes\",\r\n    \"TelefoneProprietario\" : \"11955577314\",\r\n    \"Quartos\" : \"3\",\r\n    \"Banheiros\" : \"2\",\r\n    \"TipoResidencia\" : \"Sobrado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Imovel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Imovel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar um imóvel (id)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/Imovel/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Imovel",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar um imóvel (id)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"tituloCasa\": \"aaaaaaaa\",\r\n        \"cep\": \"03679030\",\r\n        \"estado\": \"SP\",\r\n        \"cidade\": \"São Paulo\",\r\n        \"numero\": \"119\",\r\n        \"endereco\": \"Rua Agenor Brito\",\r\n        \"valorCasa\": 150.0,\r\n        \"area\": \"174\",\r\n        \"nomeProprietario\": \"joao santos\",\r\n        \"telefoneProprietario\": \"11955577314\",\r\n        \"quartos\": 1,\r\n        \"banheiros\": 1,\r\n        \"tipoResidencia\": \"Casa\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Imovel/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Imovel",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
